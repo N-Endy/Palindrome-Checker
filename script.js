@@ -1,13 +1,13 @@
 let word; 
-let btn = document.querySelector('.btn');
+let btn = document.querySelector('#btn');
 let result = document.querySelector('.result');
 
 btn.addEventListener('click', () => {
-    checkWord()
+    checkWord();
 })
 
 function checkWord() {
-    word = document.querySelector('.input').value;
+    word = document.querySelector('#input').value;
     if (word === '') {
         alert('Please input a word')
     } else {
@@ -24,19 +24,19 @@ function checkWord() {
 }
 
 function isPalindrome() {
-    result.style.background = 'green'
+    result.classList.add('bg-success');
     result.innerText = `The word '${word}' is a palindrome`;
     setTimeout(function() {
         result.innerText = '';
-        result.style.background = '#ffd5af'
+        result.classList.remove('bg-success');
     }, 3000)
 }
 
 function isNotPalindrome() {
-    result.style.background = 'red'
+    result.classList.add('bg-danger');
     result.innerText = `The word '${word}' is not a palindrome`;
     setTimeout(function() {
         result.innerText = '';
-        result.style.background = '#ffd5af'
+        result.classList.remove('bg-danger');
     }, 3000)
 }
